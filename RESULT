@@ -1,0 +1,169 @@
+训练样本数是------> 8636
+测试样本数是------> 1279
+**************************************************SVM（支持向量机）**********************************
+SVM模型为：
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+             precision    recall  f1-score   support
+
+        0.0       0.78      0.94      0.85       610
+        1.0       0.93      0.76      0.84       669
+
+avg / total       0.86      0.85      0.84      1279
+
+[[571  39]
+ [159 510]]
+<function matrix_rank at 0xfbe7d0>
+********************************SVMCV**************************************
+Fitting 3 folds for each of 14 candidates, totalling 42 fits
+[Parallel(n_jobs=1)]: Done  42 out of  42 | elapsed:  5.1min finished
+SVMCV模型参数信息为：
+kernel rbf
+C 1000
+verbose False
+probability True
+degree 3
+shrinking True
+max_iter -1
+decision_function_shape None
+random_state None
+tol 0.001
+cache_size 200
+coef0 0.0
+gamma 0.001
+class_weight None
+SVMCV模型为：
+SVC(C=1000, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.001, kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+--------------------------SVMCV 测试准确度为-------------------------------------------
+             precision    recall  f1-score   support
+
+        0.0       0.76      0.96      0.85       610
+        1.0       0.95      0.72      0.82       669
+
+avg / total       0.86      0.84      0.83      1279
+
+[[586  24]
+ [186 483]]
+**********************************GBDT**************************************
+GBDT模型为：
+GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_split=1e-07, min_samples_leaf=1,
+              min_samples_split=2, min_weight_fraction_leaf=0.0,
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=0, warm_start=False)
+--------------------------GBDT  测试准确度为-------------------------------------------
+             precision    recall  f1-score   support
+
+        0.0       0.79      0.95      0.86       610
+        1.0       0.94      0.77      0.85       669
+
+avg / total       0.87      0.86      0.86      1279
+
+[[580  30]
+ [154 515]]
+**********************************RF**************************************
+RF模型为：
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=8, n_jobs=1, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+--------------------------RF测试准确度为-------------------------------------------
+             precision    recall  f1-score   support
+
+        0.0       0.86      0.95      0.90       610
+        1.0       0.95      0.86      0.90       669
+
+avg / total       0.90      0.90      0.90      1279
+
+[[577  33]
+ [ 97 572]]
+*********************************************朴素贝叶斯***************************************************
+NB模型为：
+GaussianNB(priors=None)
+------------------------------------------朴素贝叶斯测试准确度为-------------------------------------------
+             precision    recall  f1-score   support
+
+        0.0       0.65      0.83      0.73       610
+        1.0       0.79      0.58      0.67       669
+
+avg / total       0.72      0.70      0.70      1279
+
+[[506 104]
+ [278 391]]
+**********************************MultinomialNB**************************************
+MultinomialNB模型为：
+MultinomialNB(alpha=0.01, class_prior=None, fit_prior=True)
+--------------------------MultinomialNB   测试准确度为-------------------------------------------
+             precision    recall  f1-score   support
+
+        0.0       0.67      0.69      0.68       610
+        1.0       0.71      0.70      0.70       669
+
+avg / total       0.69      0.69      0.69      1279
+
+[[418 192]
+ [202 467]]
+**********************************KNN**************************************
+KNN模型为：
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')
+--------------------------KNN   测试准确度为-------------------------------------------
+             precision    recall  f1-score   support
+
+        0.0       0.74      0.93      0.82       610
+        1.0       0.92      0.70      0.80       669
+
+avg / total       0.83      0.81      0.81      1279
+
+[[568  42]
+ [199 470]]
+*****************************************决策树,分类和回归树（CART）******************************
+CART模型为：
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')
+-------------------------------------------决策树,分类和回归树（CART）----------------------------------
+             precision    recall  f1-score   support
+
+        0.0       0.86      0.93      0.90       610
+        1.0       0.93      0.87      0.90       669
+
+avg / total       0.90      0.90      0.90      1279
+
+[[567  43]
+ [ 89 580]]
+********************************特征重要性为***************************************
+[ 0.18874843  0.0427264   0.04547938  0.06622531  0.00948207  0.01363399
+  0.00130121  0.49687015  0.08637354  0.04915953  0.        ]
+*************************************逻辑回归*********************************
+LR模型为：
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+             precision    recall  f1-score   support
+
+        0.0       0.71      0.83      0.77       610
+        1.0       0.82      0.69      0.75       669
+
+avg / total       0.77      0.76      0.76      1279
+
+[[508 102]
+ [210 459]]
+-------------------------------------------逻辑回归测试精度为----------------------------------
+{'warm_start': False, 'C': 1.0, 'n_jobs': 1, 'verbose': 0, 'intercept_scaling': 1, 'fit_intercept': True, 'max_iter': 100, 'penalty': 'l2', 'multi_class': 'ovr', 'random_state': None, 'dual': False, 'tol': 0.0001, 'solver': 'liblinear', 'class_weight': None}
+[[-0.1853747   6.50587712  0.10549122  1.58730224  1.97712333  2.15383772
+  -0.34179721  0.07639314  0.37833934 -0.12924008  0.05532551]]
+[-0.1109775]
